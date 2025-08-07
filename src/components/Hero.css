@@ -254,9 +254,11 @@
 }
 
 .highlight-text {
-  color: var(--neon-cyan);
-  font-weight: 600;
+  color: #64ffda;
+  font-weight: 700;
   position: relative;
+  display: inline-block;
+  transition: all 0.3s ease;
 }
 
 .highlight-text::after {
@@ -264,16 +266,21 @@
   position: absolute;
   bottom: -2px;
   left: 0;
-  width: 100%;
+  width: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-green));
-  animation: highlightGlow 2s ease-in-out infinite alternate;
+  background: linear-gradient(90deg, #64ffda, #10b981);
+  transition: width 0.4s ease;
 }
 
-@keyframes highlightGlow {
-  0% { opacity: 0.5; }
-  100% { opacity: 1; }
+
+
+.highlight-text:hover::after {
+  width: 100%;
 }
+
+
+
+
 
 /* FUTURISTIC BUTTONS */
 .hero-actions {
@@ -660,6 +667,22 @@
   gap: 1rem;
   color: var(--text-secondary);
   z-index: 10;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scroll-indicator-cyber:hover {
+  color: var(--neon-cyan);
+  transform: translateX(-50%) translateY(-5px);
+}
+
+.scroll-indicator-cyber:hover .scroll-wheel {
+  border-color: var(--neon-cyan);
+}
+
+.scroll-indicator-cyber:hover .scroll-dot {
+  background: var(--neon-cyan);
+  box-shadow: 0 0 15px var(--neon-cyan);
 }
 
 .scroll-wheel {

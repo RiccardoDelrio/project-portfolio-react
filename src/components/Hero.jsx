@@ -87,16 +87,12 @@ const Hero = () => {
               </div>
 
               {/* Cyber Description */}
-              <p className="hero-description">
-                Trasformo <span className="highlight-text">idee innovative</span> in 
-                <span className="highlight-text"> esperienze web dinamiche</span>. 
-                Specializzato in <span className="highlight-text">JavaScript, React, Node.js</span> e 
-                <span className="highlight-text">PHP/Laravel</span> con focus su 
-                <span className="highlight-text">performance</span> e 
-                <span className="highlight-text">user experience</span> moderne.
-              </p>
+                      <p className="hero-description">
+                      Trasformo <span className="highlight-text">idee innovative</span> in <span className="highlight-text">esperienze web dinamiche</span>. 
+                      Specializzato in <span className="highlight-text">JavaScript, React, Node.js</span> e <span className="highlight-text">PHP/Laravel</span> con focus su <span className="highlight-text">performance</span> e <span className="highlight-text">user experience</span> moderne.
+                      </p>
 
-              {/* Futuristic Buttons */}
+                      {/* Futuristic Buttons */}
               <div className="hero-actions">
                 <button className="btn-cyber btn-primary">
                   <i className="fas fa-rocket me-2"></i>
@@ -185,7 +181,12 @@ const Hero = () => {
       </div>
 
       {/* Scroll Indicator Futuristico */}
-      <div className="scroll-indicator-cyber">
+      <div className="scroll-indicator-cyber" onClick={() => {
+        const element = document.getElementById('about');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }}>
         <div className="scroll-wheel">
           <div className="scroll-dot"></div>
         </div>
