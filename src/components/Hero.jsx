@@ -147,7 +147,8 @@ const Hero = () => {
                     </div>
                     <div className="avatar-image">
                       <img 
-                        src="https://via.placeholder.com/300x300/8B5CF6/ffffff?text=RDR" 
+                        src="/images/avatar-new.png"
+
                         alt=""
                         className="img-fluid"
                       />

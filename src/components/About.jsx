@@ -15,7 +15,7 @@ const About = () => {
     {
       icon: "fas fa-database",
       title: "Database & Tools",
-      description: "MySQL, MongoDB, Git, Docker, metodologie Agile, testing automatizzato"
+      description: "MySQL, phpMyAdmin con Laravel/PHP per gestione database"
     },
     {
       icon: "fas fa-mobile-alt",

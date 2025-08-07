@@ -23,7 +23,7 @@ export default function Navigation() {
     };
 
     return (
-        <nav className={`navbar navbar-expand-lg fixed-top custom-navbar ${scrolled ? 'scrolled' : ''}`}>
+        <nav className={`navbar navbar-expand-lg  custom-navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="container">
                 <Link className="navbar-brand fw-bold" to="/">
                     <i className="fas fa-code me-2"></i>
