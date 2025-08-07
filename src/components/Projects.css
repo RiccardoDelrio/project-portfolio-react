@@ -1,0 +1,255 @@
+.projects-section {
+  padding: 6rem 0;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.projects-subtitle {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3rem;
+    height: 0.2rem;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-sm);
+  }
+}
+
+.project-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.4s ease;
+  border: 1px solid var(--border-color);
+  height: 100%;
+  
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    
+    .card-img-top {
+      transform: scale(1.05);
+    }
+    
+    .card-overlay {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  
+  &.featured-card {
+    position: relative;
+    
+    &::before {
+      content: 'Featured';
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--gradient-primary);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      z-index: 3;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+.card-image-container {
+  position: relative;
+  overflow: hidden;
+  
+  .card-img-top {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  
+  .overlay-content {
+    text-align: center;
+    
+    .btn {
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-md);
+      transition: all 0.3s ease;
+      
+      &.btn-outline-light {
+        border-color: rgba(255, 255, 255, 0.5);
+        
+        &:hover {
+          background: white;
+          color: var(--text-primary);
+          border-color: white;
+        }
+      }
+      
+      &.btn-light {
+        &:hover {
+          background: var(--primary-color);
+          color: white;
+          border-color: var(--primary-color);
+        }
+      }
+    }
+  }
+}
+
+.card-body {
+  padding: 2rem;
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+  
+  .card-text {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+.category-badge {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  
+  .badge {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    padding: 0.375rem 0.75rem;
+    border-radius: var(--radius-md);
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: none;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: var(--primary-color);
+      color: white;
+      transform: translateY(-1px);
+    }
+  }
+}
+
+.featured-projects {
+  margin-bottom: 4rem;
+  
+  .project-card {
+    border: 2px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                var(--gradient-primary) border-box;
+  }
+}
+
+.other-projects {
+  .project-card {
+    .btn-outline-primary {
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+      
+      &:hover {
+        background: var(--primary-color);
+        color: white;
+        border-color: var(--primary-color);
+      }
+    }
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 4rem 0;
+  }
+  
+  .project-card {
+    margin-bottom: 2rem;
+    
+    .card-body {
+      padding: 1.5rem;
+    }
+    
+    .card-title {
+      font-size: 1.25rem;
+    }
+  }
+  
+  .card-image-container {
+    .card-img-top {
+      height: 200px;
+    }
+  }
+  
+  .tech-badges {
+    .badge {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+    }
+  }
+  
+  .featured-projects,
+  .other-projects {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-overlay {
+    .overlay-content {
+      .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 0.5rem;
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
