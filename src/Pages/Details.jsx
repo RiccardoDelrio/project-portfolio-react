@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './Details.css';
+import './Details.css';
 
 export default function Details() {
     const { id } = useParams();
@@ -15,7 +16,8 @@ export default function Details() {
             technologies: ["React", "Node.js", "JWT", "Vite", "JavaScript", "CSS", "Express.js", "MongoDB"],
             category: "Full Stack",
             githubUrl: "https://github.com/RiccardoDelrio/Boolique-Ecommerce",
-            liveUrl: "#",
+            videoUrl: "https://www.youtube.com/watch?v=sLB7wGomdO4",
+            videoId: "sLB7wGomdO4",
             features: [
                 "Sistema di autenticazione JWT completo",
                 "Gestione prodotti e categorie dinamiche",
@@ -41,7 +43,6 @@ export default function Details() {
             technologies: ["Laravel", "PHP", "Blade", "SCSS", "MySQL", "Bootstrap", "JavaScript"],
             category: "Backend",
             githubUrl: "https://github.com/RiccardoDelrio/backoffice-laravel",
-            liveUrl: "#",
             features: [
                 "Dashboard amministrativa completa",
                 "Sistema di gestione utenti e ruoli",
@@ -67,7 +68,6 @@ export default function Details() {
             technologies: ["React", "Vite", "CSS", "JavaScript", "Responsive Design", "Component Architecture"],
             category: "Frontend",
             githubUrl: "https://github.com/RiccardoDelrio/steam-react",
-            liveUrl: "#",
             features: [
                 "Replica fedele dell'UI Steam",
                 "Design completamente responsivo",
@@ -93,7 +93,6 @@ export default function Details() {
             technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "UI/UX", "Animations"],
             category: "Frontend",
             githubUrl: "https://github.com/RiccardoDelrio/curriculum",
-            liveUrl: "#",
             features: [
                 "Design moderno e professionale",
                 "Animazioni fluide e coinvolgenti",
@@ -168,13 +167,18 @@ export default function Details() {
                                     <i className="fab fa-github me-2"></i>
                                     Codice Sorgente
                                 </a>
-                                <a 
-                                    href={project.liveUrl} 
-                                    className="btn btn-primary"
-                                >
-                                    <i className="fas fa-external-link-alt me-2"></i>
-                                    Live Demo
-                                </a>
+                                {project.videoUrl && (
+                                    <a 
+                                        href={project.videoUrl} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        className="btn"
+                                        style={{backgroundColor: '#10B981', color: 'white', borderColor: '#10B981'}}
+                                    >
+                                        <i className="fab fa-youtube me-2"></i>
+                                        Video Presentazione
+                                    </a>
+                                )}
                             </div>
                         </div>
                     </div>
@@ -193,6 +197,26 @@ export default function Details() {
                                 }}
                             />
                         </div>
+
+                        {/* Video Presentation Section */}
+                        {project.videoUrl && (
+                            <div className="video-presentation mb-4">
+                                <h3 className="mb-3">
+                                    <i className="fab fa-youtube text-danger me-2"></i>
+                                    Video Presentazione
+                                </h3>
+                                <div className="video-container">
+                                    <div className="ratio ratio-16x9">
+                                        <iframe
+                                            src={`https://www.youtube.com/embed/${project.videoId}`}
+                                            title={`Video presentazione ${project.title}`}
+                                            allowFullScreen
+                                            className="rounded"
+                                        ></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
                         
                         <div className="project-description mb-4">
                             <h3>Descrizione del Progetto</h3>
@@ -252,13 +276,18 @@ export default function Details() {
                                             <i className="fab fa-github me-2"></i>
                                             Repository GitHub
                                         </a>
-                                        <a 
-                                            href={project.liveUrl} 
-                                            className="btn btn-primary"
-                                        >
-                                            <i className="fas fa-globe me-2"></i>
-                                            Live Demo
-                                        </a>
+                                        {project.videoUrl && (
+                                            <a 
+                                                href={project.videoUrl} 
+                                                target="_blank" 
+                                                rel="noopener noreferrer"
+                                                className="btn"
+                                                style={{backgroundColor: '#10B981', color: 'white', borderColor: '#10B981'}}
+                                            >
+                                                <i className="fab fa-youtube me-2"></i>
+                                                Video Presentazione
+                                            </a>
+                                        )}
                                     </div>
                                 </div>
                             </div>

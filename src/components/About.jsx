@@ -57,12 +57,25 @@ const About = () => {
         </div>
 
         <div className="row mt-5">
-          <div className="col-lg-8 mx-auto text-center">
+          <div className="col-lg-10 mx-auto text-center">
             <div className="tech-stack">
               <h3 className="mb-4">Tecnologie Principali</h3>
-              <div className="tech-badges">
-                {['React', 'Vue.js', 'Node.js', 'Laravel', 'JavaScript', 'PHP', 'MySQL', 'MongoDB', 'Bootstrap', 'Sass', 'Git', 'Docker'].map((tech, index) => (
-                  <span key={index} className="tech-badge">{tech}</span>
+              <div className="tech-badges justify-content-center">
+                {[
+                  { name: 'React', icon: 'fab fa-react' },
+                  { name: 'Vue.js', icon: 'fab fa-vuejs' },
+                  { name: 'Node.js', icon: 'fab fa-node-js' },
+                  { name: 'Laravel', icon: 'fab fa-laravel' },
+                  { name: 'JavaScript', icon: 'fab fa-js-square' },
+                  { name: 'PHP', icon: 'fab fa-php' },
+                  { name: 'MySQL', icon: 'fas fa-database' },
+                  { name: 'Bootstrap', icon: 'fab fa-bootstrap' },
+                  { name: 'Git', icon: 'fab fa-git-alt' }
+                ].map((tech, index) => (
+                  <div key={index} className="tech-badge">
+                    <i className={tech.icon}></i>
+                    <span>{tech.name}</span>
+                  </div>
                 ))}
               </div>
             </div>

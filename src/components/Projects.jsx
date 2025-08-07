@@ -11,7 +11,9 @@ const Projects = () => {
       technologies: ["React", "Node.js", "JWT", "Vite", "JavaScript", "CSS"],
       category: "Full Stack",
       githubUrl: "https://github.com/RiccardoDelrio/Boolique-Ecommerce",
-      liveUrl: "#",
+      videoUrl: "https://www.youtube.com/watch?v=sLB7wGomdO4",
+      hasLiveDemo: false,
+      hasVideo: true,
       featured: true
     },
     {
@@ -22,7 +24,8 @@ const Projects = () => {
       technologies: ["Laravel", "PHP", "Blade", "SCSS", "MySQL", "Bootstrap"],
       category: "Backend",
       githubUrl: "https://github.com/RiccardoDelrio/backoffice-laravel",
-      liveUrl: "#",
+      hasLiveDemo: false,
+      hasVideo: false,
       featured: true
     },
     {
@@ -33,7 +36,8 @@ const Projects = () => {
       technologies: ["React", "Vite", "CSS", "JavaScript", "Responsive Design"],
       category: "Frontend",
       githubUrl: "https://github.com/RiccardoDelrio/steam-react",
-      liveUrl: "#",
+      hasLiveDemo: false,
+      hasVideo: false,
       featured: false
     },
     {
@@ -44,7 +48,8 @@ const Projects = () => {
       technologies: ["HTML5", "CSS3", "JavaScript", "Responsive", "UI/UX"],
       category: "Frontend",
       githubUrl: "https://github.com/RiccardoDelrio/curriculum",
-      liveUrl: "#",
+      hasLiveDemo: false,
+      hasVideo: false,
       featured: false
     }
   ];
@@ -86,9 +91,16 @@ const Projects = () => {
                         <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="btn btn-outline-light btn-sm me-2">
                           <i className="fab fa-github me-1"></i> Codice
                         </a>
-                        <a href={project.liveUrl} className="btn btn-light btn-sm">
-                          <i className="fas fa-external-link-alt me-1"></i> Live
-                        </a>
+                        {project.hasVideo && (
+                          <a href={project.videoUrl} target="_blank" rel="noopener noreferrer" className="btn btn-light btn-sm">
+                            <i className="fab fa-youtube me-1"></i> Video
+                          </a>
+                        )}
+                        {project.hasLiveDemo && (
+                          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn btn-light btn-sm">
+                            <i className="fas fa-external-link-alt me-1"></i> Live
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -134,9 +146,16 @@ const Projects = () => {
                         <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="btn btn-outline-light btn-sm me-2">
                           <i className="fab fa-github me-1"></i> Codice
                         </a>
-                        <a href={project.liveUrl} className="btn btn-light btn-sm">
-                          <i className="fas fa-external-link-alt me-1"></i> Live
-                        </a>
+                        {project.hasVideo && (
+                          <a href={project.videoUrl} target="_blank" rel="noopener noreferrer" className="btn btn-light btn-sm">
+                            <i className="fab fa-youtube me-1"></i> Video
+                          </a>
+                        )}
+                        {project.hasLiveDemo && (
+                          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn btn-light btn-sm">
+                            <i className="fas fa-external-link-alt me-1"></i> Live
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
