@@ -42,9 +42,9 @@ export default function Navigation() {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ms-auto">
                         <li className="nav-item">
-                            <button className="nav-link btn btn-link" onClick={() => scrollToSection('about')}>
+                            <Link className="nav-link" to="/about">
                                 Chi Sono
-                            </button>
+                            </Link>
                         </li>
                         <li className="nav-item">
                             <button className="nav-link btn btn-link" onClick={() => scrollToSection('projects')}>
@@ -52,9 +52,9 @@ export default function Navigation() {
                             </button>
                         </li>
                         <li className="nav-item">
-                            <button className="nav-link btn btn-link" onClick={() => scrollToSection('contact')}>
+                            <Link className="nav-link" to="/contact">
                                 Contatti
-                            </button>
+                            </Link>
                         </li>
                         <li className="nav-item">
                             <a 
